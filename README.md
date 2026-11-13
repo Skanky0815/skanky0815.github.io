@@ -30,15 +30,17 @@ und beantwortet keine organisatorische Rechtsfrage nach § 7 JMStV.
 2. Zuerst Spiel-PR #286 reviewen, mergen und regulär als Spielversion veröffentlichen.
 3. `python3 tools/check_host.py --live` prüft anschließend alle vier öffentlichen
    Spielseiten auf ihre Alters-Metadaten. Fehlende Angaben stoppen die Bereitstellung.
-4. Nach Review dieses Host-PRs in den Repository-Einstellungen unter **Pages**
-   die Quelle **GitHub Actions** wählen. Danach den Workflow **Host veröffentlichen**
+4. Nach Review dieses Host-PRs unter **Pages** die vorbereitete Quelle
+   **GitHub Actions** kontrollieren. Danach den Workflow **Host veröffentlichen**
    manuell auf `main` starten. Er prüft lokal und live, bevor er ausschließlich
    `public/` als Pages-Artefakt veröffentlicht. PRs und Pushes veröffentlichen nichts.
 5. Danach HTTP-Status und XML-Inhalt von `/age-de.xml` und `/age.xml`, beide
    Spieleinstiege sowie echte Erkennung/Altersgrenzen in einem geeigneten
    Jugendschutzprogramm prüfen. Zusätzlich die Wirkung auf andere Projektpfade prüfen.
 
-Die Dateien liegen bis zur separaten Freigabe nur im Review-Branch. Die
-[Pages-Konfiguration](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
-wird bei der Vorbereitung nicht aktiviert. Es werden keine Domain-, Redirect-
-oder hostweiten robots.txt-Einstellungen angelegt.
+Die Altersdateien liegen bis zur separaten Freigabe nur im Review-Branch. GitHub
+aktiviert User-Pages beim Anlegen des entsprechend benannten Repositorys automatisch;
+die Quelle wurde deshalb von der automatischen Branch-Veröffentlichung auf
+[GitHub Actions](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
+umgestellt. Der vorbereitete Veröffentlichungsworkflow wird erst nach Review manuell
+gestartet. Es werden keine Domain-, Redirect- oder hostweiten robots.txt-Einstellungen angelegt.
